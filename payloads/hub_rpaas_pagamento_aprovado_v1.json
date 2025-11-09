@@ -1,0 +1,46 @@
+{
+    "consumer": {
+      "name": "rpaas"
+    },
+    "provider": {
+      "name": "hub"
+    },
+    "interactions": [
+      {
+        "description": "A request for data",
+        "request": {
+          "method": "POST",
+          "path": "/processing/v1/calculate",
+          "body": {
+            "cliente": {
+              "codigo_pessoa": "12345678901"
+            },
+            "pagamento": {
+              "valor": 150.75,
+              "data_pagamento": "2024-06-15"
+            },
+            "contrato": {
+              "numero_contrato": "9876543210"
+            }
+          }
+        },
+        "response": {
+          "status": 200,
+          "body": {
+            "cliente": {
+              "codigo_pessoa": "12345678901"
+            },
+            "pagamento": {
+              "valor": 150.75,
+              "data_pagamento": "2024-06-15",
+              "valor_desconto": 15.08,
+              "data_processamento": "2024-06-16"
+            },
+            "contrato": {
+              "numero_contrato": "9876543210"
+            }
+          }
+        }
+      }
+    ]
+  }
